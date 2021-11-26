@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+ <title>JavaScript - Function</title>
+ <script>
+ function diameter(r)
+ {
+ var temp = 2*r
+ return temp
+ }
+ </script>
+</head>
+<body>
+<h1>Diameter of a circle</h1>
+<p>Enter a radius: <input type = "text" id = "rInput" /></p>
+<button type = "button" onclick = "showDiameter()">Try it</button>
+<p id="result"></p>
+<script>
+ function showDiameter()
+ {
+ var r = document.getElementById("rInput").value;
+ document.getElementById("result").innerHTML = "Diameter = " + diameter(r);
+ }
+</script>
+</body>
+</html>

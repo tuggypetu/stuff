@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+ <title>JavaScript - Confirm</title>
+</head>
+<body>
+<h1>Test Confirm</h1>
+<p id="pandu"> Yo sup </p>
+<script>
+ var r=confirm("Can you vote?")
+ if (r == true)
+ document.getElementById("pandu").innerHTML="You must be 18 years old or older.";
+ else
+ document.getElementById("pandu").innerHTML="You are less than 18 years old.";
+</script>
+</body>
+</html>

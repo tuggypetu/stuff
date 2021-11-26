@@ -1,0 +1,102 @@
+<!DOCTYPE HTML> <html lang="en"> <head> <title>New membership</title>
+<script>
+	function checkName(document) {
+        var name = document.getElementById("name");
+        var name_msg = document.getElementById('name_msg');
+
+        if (name.value == "") {
+            name_msg.innerHTML = "You did not enter a name. Please enter your name now.";
+            name.focus();
+        return false;
+        }
+		else {
+			name_msg.innerHTML = "";
+		}
+		return true;
+    }
+    function checkPassword(document) {
+        var pwd =document.getElementById("password");
+        var pwd_msg =document.getElementById('pwd_msg');
+
+        if (pwd.value == "") {
+            pwd_msg.innerHTML = "You did not enter a password. Please enter your password now.";
+            pwd.focus();
+            return false;
+        }
+        else {
+            pwd_msg.innerHtml = "";
+        }
+        return true;
+    }
+    function checkRePassword(document) {
+        var pwd = document.getElementById("password");
+        var repwd_msg = document.getElementById('repwd_msg');
+        var repwd = document.getElementById("rePassword")
+
+        if (pwd.value != repwd.value) {
+            repwd_msg.innerHTML = "The two passwords are not the same. Please re-enter both now.";
+            repwd.focus();
+            return false;
+        }
+        else {
+            pwd_msg.innerHtml = "";
+        }
+        return true;
+    }
+    function checkZIPCode(document) {
+        var zip = document.getElementById("zip")
+        var zip_msg = document.getElementById("zip_msg")
+        var isNum = /^[0-9]{4}$/.test(zip.value)
+        if (!isNum) {
+            zip_msg.innerHTML = "4 numerical digits are required. Please re-enter your postcode.";
+            zip.focus();
+            return false;
+        }
+        else {
+            zip_msg.innerHTML = ""
+        }
+        return true;
+    }
+	function validateInfo(document) {
+		if ( checkName(document) & checkPassword(document) & checkRePassword(document) & checkZIPCode(document) )
+		{
+		return true;
+		}
+		return false;
+	}
+</script>
+</head>
+<body>
+<h1>New Membership Form</h1>
+<h2>Please enter your profile</h2>
+<p><i>Fields marked with an asterisk (*) must be entered.</i></p>
+<form action="" method="post" >
+  <table border="0">
+	<tr>
+	    <td align="right">* Name:</td>
+	    <td><input type="text" id="name" name="name" onChange="checkName(document)"> </td>
+	    <td id="name_msg" style="color:red;"></td>
+	</tr>
+	<tr>
+	    <td align="right">* Password:</td>
+	    <td><input type="password" id="password" name="password" onChange="checkPassword(document)"></td>
+	    <td id="pwd_msg" style="color:red;"></td>
+	</tr>
+	<tr>
+	    <td align="right">* Re-try:</td>
+	    <td><input type="Password" id="rePassword" name="rePassword" onChange="checkRePassword(document)"> </td>
+        <td id="repwd_msg" style="color:red;"></td>
+	</tr>
+	<tr>
+	    <td align="right">* Postcode:</td>
+	    <td><input type="text" name="zip" id="zip" placeholder="4 digits" onChange="checkZIPCode(document)"></td>
+	    <td id="zip_msg" style="color:red;"></td>
+	</tr>
+	<tr>
+	    <td align="right"><input type="submit" name="submit" value="Submit" onClick="return validateInfo(document)"></td>
+	    <td><input type="reset" name="reset" value="Clear"></td>
+	</tr>
+  </table>
+</form>
+</body>
+</html>
