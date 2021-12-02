@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><title>My first OnClick</title></head><body>
+<canvas id="myCanvas" width="400" height="400" style="border:2px solid red">
+</canvas>
+<p><button onclick="myCanvas()">Try it</button>
+    <button onclick="Reset()">Reset</button></p>
+<script>
+    function myCanvas() {
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = 'red';
+        ctx.fillRect(10, 10, 380, 380);
+    }
+    function Reset() {
+        var r = document.getElementById("myCanvas");
+        var ctx = r.getContext("2d");
+        ctx.fillStyle = 'white';
+        ctx.fillRect(10, 10, 380, 380);
+    }
+</script>
+</body></html>

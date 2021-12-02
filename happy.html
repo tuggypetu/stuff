@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><title>My first OnClick</title></head><body>
+<p><button onclick="myFace()">Click to find out!</button>
+<button onclick="Reset()">Reset</button></p>
+<canvas id="myFace" width="200" height="180" style="border:2px solid black"></canvas>
+<script>
+    function myFace() {
+        var text = document.getElementById("myFace");
+        var ctext = text.getContext("2d");
+        ctext.fillStyle = "black";
+        ctext.font = "18px Arial";
+        ctext.fillText("Hello World", 15, 15);
+
+
+        var e1 = document.getElementById("myFace");
+        var ctx = e1.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(50,50,25,0,2 * Math.PI)
+        ctx.fillStyle = 'blue';
+        ctx.fill();
+
+        var e2 = document.getElementById("myFace");
+        var cotx = e2.getContext("2d");
+        cotx.beginPath();
+        cotx.arc(150,50,25,0,2 * Math.PI)
+        cotx.fillStyle = 'blue';
+        cotx.fill();
+
+        var block = document.getElementById("myFace");
+        var con = block.getContext("2d");
+        con.beginPath();
+        con.arc(150,12,25,0, Math.PI)
+        con.fillStyle = 'white';
+        con.fill();
+
+        var t = document.getElementById("myFace");
+        var contx = t.getContext("2d");
+        contx.fillStyle = 'red';
+        contx.beginPath();
+        contx.moveTo(100, 70);
+        contx.lineTo(120, 110);
+        contx.lineTo(80, 110);
+        contx.fill();
+
+
+
+        var m = document.getElementById("myFace");
+        var contex = m.getContext("2d");
+        contex.beginPath();
+        contex.moveTo(60, 120);
+        contex.bezierCurveTo(60, 160, 140, 160, 140, 120);
+        contex.closePath()
+        contex.lineWidth = 3;
+        contex.strokeStyle = 'green';
+        contex.stroke();
+    }
+    function Reset() {
+        var reset = document.getElementById("myFace");
+        var context = reset.getContext('2d');
+        context.clearRect(0, 0, reset.width, reset.height);
+    }
+</script>
+</body></html>
